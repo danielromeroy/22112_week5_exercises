@@ -26,9 +26,9 @@ for genome_line in genome:
             count_a, count_t, count_c, count_g, count_n = 0, 0, 0, 0, 0
             # Run if RAM is limited. Writes file by sequence and cleans comp[] instead of storing the entire genome
             # twice in memory (lists take a lot of space!).
-            with open(DESTINATION_PATH, "ab") as outfile:
-                outfile.write(b"\n".join(comp))
-            comp = []
+            # with open(DESTINATION_PATH, "ab") as outfile:
+            #     outfile.write(b"\n".join(comp))
+            # comp = []
         seq_count += 1  # Set count to next sequence
         comp.append(genome_line)  # Put header in comp list
         prev_fasta_header = len(comp) - 1  # Store index of this sequence's header for setting new header later on.
